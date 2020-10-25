@@ -16,9 +16,11 @@ import (
 func Build() error {
 	fmt.Println("Tidying...")
 	cmd := exec.Command("go", "mod", "tidy")
+	cmd.Run()
 
 	fmt.Println("Formatting...")
 	cmd = exec.Command("go", "fmt", "-x")
+	cmd.Run()
 
 	fmt.Println("Installing...")
 	cmd = exec.Command("go", "install")
